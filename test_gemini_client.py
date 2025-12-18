@@ -3,10 +3,7 @@ from google import genai
 from google.genai import types
 #--load the environment variables
 from dotenv import load_dotenv
-# CHANGE THIS LINE: Add override=True
 load_dotenv(override=True)
-# 1. Get API Key
-# Make sure your environment variable is set, or replace with your actual key string for testing
 #--load from environment variables
 api_key = os.environ.get("GEMINI_API_KEY")
 

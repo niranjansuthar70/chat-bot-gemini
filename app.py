@@ -68,6 +68,12 @@ def truncate(text, n=70):
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
+if not st.session_state.messages:
+    st.session_state.messages.append({
+        "role": "model",
+        "content": "💡 Type your question and press **Enter** to search the web."
+    })
+
 # 4. Display History
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
@@ -78,7 +84,9 @@ for message in st.session_state.messages:
                     st.markdown(f"- {source}")
 
 # 5. Handle New Messages
-if prompt := st.chat_input("Ask me anything..."):
+if prompt := st.chat_input(
+    placeholder="best coffee in India"
+):
     # Show User Message
     st.chat_message("user").markdown(prompt)
     st.session_state.messages.append({"role": "user", "content": prompt})

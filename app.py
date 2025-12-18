@@ -19,7 +19,8 @@ st.sidebar.header("⚙️ Settings")
 
 MODEL_OPTIONS = {
     "Fast (Flash)": "gemini-2.5-flash",
-    "Accurate (Pro)": "gemini-2.5-pro"
+    "Accurate (Pro)": "gemini-2.5-pro",
+    "Lightweight (Flash Lite)": "gemini-2.5-flash-lite"
 }
 
 selected_model_label = st.sidebar.radio(
